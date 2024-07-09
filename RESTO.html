@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Projet pour l'Application Mobile "Resto"</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1, h2, h3, h4 {
+            color: #00d1b2;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #1c1c1c;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #343a40;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #00d1b2;
+            color: #121212;
+        }
+        tr:hover {
+            background-color: #2a2a2a;
+        }
+        ul, p {
+            line-height: 1.6;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .blur-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .blur-effect::before {
+            content: "";
+            position: absolute;
+            top: -10%;
+            bottom: -10%;
+            left: -10%;
+            right: -10%;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        
+        }
+        .light-mode {
+            background-color: #ffffff;
+            color: #121212;
+        }
+        .light-mode h1, .light-mode h2, .light-mode h3, .light-mode h4 {
+            color: #001fab;
+        }
+        .light-mode table {
+            background-color: #f8f9fa;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .light-mode th {
+            background-color: #1e90ff;
+            color: #ffffff;
+        }
+        .light-mode tr:hover {
+            background-color: #e9ecef;
+        }
+        .mode-toggle {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: #00d1b2;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blurSections = document.querySelectorAll('.blur-effect');
+    
+            blurSections.forEach(section => {
+                section.addEventListener('mouseenter', () => {
+                    section.style.filter = 'blur(5px)';
+                });
+                section.addEventListener('mouseleave', () => {
+                    section.style.filter = 'none';
+                });
+            });
+    
+            const modeToggle = document.createElement('button');
+            modeToggle.textContent = 'Mode Clair / Mode Sombre';
+            modeToggle.classList.add('mode-toggle');
+            document.body.insertBefore(modeToggle, document.body.firstChild);
+    
+            modeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('light-mode');
+            });
+        });
+    </script>
+    
+</head>
+<body>
+   
+
+    <h1>Plan de Projet pour l'Application Mobile "Resto"</h1>
+
+
+    <h2>1. Introduction</h2>
+
+    <h3 class="blur-effect">1.1. Contexte et Justification</h3>
+    <p class="highlight">Avec l'essor des technologies mobiles et la popularité croissante des applications de recherche de lieux, il existe une opportunité de créer une application dédiée uniquement aux restaurants à Lomé. Contrairement à d'autres plateformes encombrées par des publicités, cette application offrira une expérience utilisateur propre et sans interruption.</p>
+
+    <h3>1.2. Objectifs du Projet</h3>
+    <ul class="highlight">
+        <li>Créer une base de données exhaustive des restaurants à Lomé.</li>
+        <li>Permettre aux utilisateurs de rechercher des restaurants selon divers critères (distance, ambiance, budget, type de cuisine).</li>
+        <li>Offrir une interface utilisateur intuitive et agréable.</li>
+        <li>Garantir une expérience sans publicité pour les utilisateurs.</li>
+        <li>Faire connaître la communauté.</li>
+    </ul>
+
+    <h2>2. Structure de Décomposition du Projet (SDP)</h2>
+
+    <h3>2.1. Phase de Planification</h3>
+    <ul class="highlight">
+        <li>
+            <strong>Réunion de lancement</strong> (17 juin 2024)
+            <ul>
+                <li>Objectifs : Définir les rôles et responsabilités, établir les lignes directrices, et aligner la vision.</li>
+                <li>Participants : Tous les associés.</li>
+                <li>Fréquence : Tous les mardis à 20h GMT via Discord.</li>
+            </ul>
+        </li>
+        <li><strong>Définition des spécifications fonctionnelles et techniques</strong>
+            <ul>
+                <li>Identification des fonctionnalités clés.</li>
+                <li>Création de la documentation des exigences.</li>
+            </ul>
+        </li>
+        <li><strong>Recherche de marché et analyse des concurrents</strong>
+            <ul>
+                <li>Étudier les applications existantes (comme TripAdvisor) et identifier les lacunes.</li>
+            </ul>
+        </li>
+        <li><strong>Élaboration d'un plan de projet détaillé et d'un calendrier</strong></li>
+    </ul>
+
+    <h3>2.2. Phase de Conception</h3>
+    <ul class="highlight">
+        <li><strong>Mise en place des diagrammes</strong></li>
+        <li><strong>Phase de design</strong>
+            <ul>
+                <li>Création de wireframes et prototypes.</li>
+                <li>Validation des designs avec les associés.</li>
+            </ul>
+        </li>
+        <li><strong>Phase d'écriture des textes</strong></li>
+    </ul>
+
+    <h3>2.3. Phase de Développement</h3>
+    <ul class="highlight">
+        <li><strong>Développement backend (serveur, bases de données, APIs)</strong>
+            <ul>
+                <li>Mise en place du serveur et de la base de données.</li>
+                <li>Développement des APIs pour la gestion des restaurants et des utilisateurs.</li>
+            </ul>
+        </li>
+        <li><strong>Développement frontend (interfaces utilisateur)</strong>
+            <ul>
+                <li>Création des pages principales : Accueil, Recherche, Détails du restaurant, Profil utilisateur.</li>
+                <li>Intégration des designs UX/UI.</li>
+            </ul>
+        </li>
+        <li><strong>Intégration des fonctionnalités de recherche et de filtres</strong>
+            <ul>
+                <li>Développement de l'algorithme de recherche.</li>
+                <li>Implémentation des filtres (distance, ambiance, budget, type de cuisine).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.4. Phase de Test</h3>
+    <ul class="highlight">
+        <li><strong>Test de la base de données</strong></li>
+        <li><strong>Pré-lancement sur une audience cible réduite</strong>
+            <ul>
+                <li>Beta testing avec un groupe d'utilisateurs à Lomé.</li>
+                <li>Recueil des retours et ajustements nécessaires.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.5. Phase de Déploiement</h3>
+    <ul class="highlight">
+        <li><strong>Préparation au lancement (marketing, communication)</strong>
+            <ul>
+                <li>Création de contenu marketing (bannières, vidéos).</li>
+                <li>Planification des événements de lancement.</li>
+            </ul>
+        </li>
+        <li><strong>Déploiement sur les plateformes (App Store, Google Play)</strong>
+            <ul>
+                <li>Suivi des directives de soumission des applications.</li>
+                <li>Résolution des problèmes de dernière minute.</li>
+            </ul>
+        </li>
+        <li><strong>Suivi post-lancement et support utilisateur</strong>
+            <ul>
+                <li>Monitoring des performances.</li>
+                <li>Support technique pour les utilisateurs.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.6. Phase de Maintenance</h3>
+    <ul class="highlight">
+        <li><strong>Maintenance corrective et évolutive</strong>
+            <ul>
+                <li>Correction des bugs signalés.</li>
+                <li>Mises à jour régulières pour améliorer l'application.</li>
+            </ul>
+        </li>
+        <li><strong>Ajout de nouvelles fonctionnalités selon les retours utilisateurs</strong></li>
+    </ul>
+
+    <h2>3. Calendrier du Projet</h2>
+    <table>
+        <tr>
+            <th>Phase</th>
+            <th>Durée</th>
+            <th>Dates</th>
+        </tr>
+        <tr>
+            <td>Planification</td>
+            <td>2 semaines</td>
+            <td>17 juin 2024 - 30 juin 2024</td>
+        </tr>
+        <tr>
+            <td>Conception</td>
+            <td>3 mois</td>
+            <td>1 juillet 2024 - 30 septembre 2024</td>
+        </tr>
+        <tr>
+            <td>Développement</td>
+            <td>8 mois</td>
+            <td>1 octobre 2024 - 31 mai 2025</td>
+        </tr>
+        <tr>
+            <td>Test</td>
+            <td>1 mois</td>
+            <td>1 juin 2025 - 30 juin 2025</td>
+        </tr>
+        <tr>
+            <td>Déploiement</td>
+            <td>48 heures</td>
+            <td>1 juillet 2025 - 2 juillet 2025</td>
+        </tr>
+        <tr>
+            <td>Maintenance</td>
+            <td>Continu</td>
+            <td>À partir de juillet 2025</td>
+        </tr>
+    </table>
+
+    <h2>4. Ressources Nécessaires</h2>
+
+    <h3>4.1. Humaines</h3>
+    <ul class="highlight">
+        <li>Kevin : chef projet et superviseur design</li>
+        <li>Geny : Responsable R&D</li>
+        <li>Joseph : développeur backend et conseiller web developpement </li>
+        <li>Emmanuel : Chargé cybersécurité</li>
+        <li>Flore : développeuse mobile / Flutter</li>
+        <li>irène : développeuse web et UI/UX designer </li>
+
+    </ul>
+
+    <h3>4.2. Matérielles et Logicielles</h3>
+    <ul class="highlight">
+        <li>Ordinateurs et serveurs (fournis par les associés)</li>
+        <li>Logiciels de développement (fournis par les associés)</li>
+        <li>Services cloud (hébergement, bases de données) - 10 USD par mois</li>
+        <li>Outils de gestion de projet (Trello, GitHub)</li>
+    </ul>
+
+    <h2>5. Budget Prévisionnel</h2>
+
+    <h3>5.1. Coûts de Développement</h3>
+    <table>
+        <tr>
+            <th>Poste de Dépense</th>
+            <th>Coût Estimé (USD)</th>
+        </tr>
+        <tr>
+            <td>Services cloud (10 USD/mois sur 1 mois)</td>
+            <td>10 USD</td>
+        </tr>
+        <tr>
+            <td>Divers</td>
+            <td>50 USD</td>
+        </tr>
+        <tr>
+            <th>Total Développement</th>
+            <th>60 USD</th>
+        </tr>
+    </table>
+
+    <h3>5.2. Coûts Marketing</h3>
+    <table>
+        <tr>
+            <th>Activité</th>
+            <th>Coût Estimé (FCFA)</th>
+        </tr>
+        <tr>
+            <td>Publicité en ligne</td>
+            <td>50,000 FCFA</td>
+        </tr>
+        <tr>
+            <td>Événements de lancement</td>
+            <td>50,000 FCFA</td>
+        </tr>
+        <tr>
+            <td>Divers (flyers, etc.)</td>
+            <td>100,000 FCFA</td>
+        </tr>
+        <tr>
+            <th>Total Marketing</th>
+            <th>200,000 FCFA</th>
+        </tr>
+    </table>
+
+    <h3>5.3. Coûts Totaux</h3>
+    <table>
+        <tr>
+            <th>Poste de Dépense</th>
+            <th>Coût Estimé (USD et FCFA)</th>
+        </tr>
+        <tr>
+            <td>Développement</td>
+            <td>60 USD</td>
+        </tr>
+        <tr>
+            <td>Marketing</td>
+            <td>200,000 FCFA</td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th>60 USD + 200,000 FCFA</th>
+        </tr>
+    </table>
+
+    <h2>6. Risques et Plan de Mitigation</h2>
+    <table>
+        <tr>
+            <th>Risque</th>
+            <th>Probabilité</th>
+            <th>Impact</th>
+            <th>Mitigation</th>
+        </tr>
+        <tr>
+            <td>Retard dans le développement</td>
+            <td>Moyen</td>
+            <td>Haut</td>
+            <td>Révision régulière des progrès</td>
+        </tr>
+        <tr>
+            <td>Problèmes de compatibilité</td>
+            <td>Bas</td>
+            <td>Moyen</td>
+            <td>Tests rigoureux sur divers appareils</td>
+        </tr>
+        <tr>
+            <td>Adoption utilisateur faible</td>
+            <td>Moyen</td>
+            <td>Haut</td>
+            <td>Stratégie marketing ciblée</td>
+        </tr>
+    </table>
+
+    <h2>7. Critères de Succès</h2>
+    <ul class="highlight">
+        <li>Lancement dans les délais et respect du budget.</li>
+        <li>Retour utilisateur positif avec une note moyenne supérieure à 4 étoiles sur les plateformes.</li>
+        <li>Atteinte de 10,000 téléchargements dans les six premiers mois.</li>
+        <li>Expansion réussie à d'autres villes après le premier an.</li>
+    </ul>
+
+    <h2>8. Conclusion</h2>
+    <p class="highlight">Ce plan de projet propose une feuille de route détaillée pour la création et le lancement de l'application mobile "Resto" dédiée au répertoriage des restaurants à Lomé. Avec une planification soignée, une exécution rigoureuse, et une attention particulière aux besoins des utilisateurs, ce projet a toutes les chances de réussir et de se distinguer dans un marché concurrentiel.</p>
+</body>
+</html>
